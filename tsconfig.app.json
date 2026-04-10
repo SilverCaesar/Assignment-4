@@ -10,7 +10,7 @@
   },
   "include": [
     "src/**/*.ts"
-  ],
+, "../practice-Firestore-CRUD-starter/src/app/firebase.config.ts"  ],
   "exclude": [
     "src/**/*.spec.ts"
   ]
