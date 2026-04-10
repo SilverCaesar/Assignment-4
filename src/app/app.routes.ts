@@ -23,6 +23,6 @@ export const routes: Routes = [
     {
         path:'edit/:id',
         component:EditExpense,
-        title:'Edit Expense'
+        title:'Edit Expense',
     }
 ];
