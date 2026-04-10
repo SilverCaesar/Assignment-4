@@ -2,7 +2,6 @@ import { Component, inject, signal, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ExpenseService } from '../services/expense-service';
 import { ExpenseCategory } from '../models/expense';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-expense',
@@ -12,10 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditExpense {
   expenseService = inject(ExpenseService);
-  route = inject(ActivatedRoute);
-  id = computed(() => this.route.snapshot.paramMap.get('id')!);
+  id = input.required<string>();
   expense = computed(() => this.expenseService.getExpenseById((this.id()))!);
-  //post = computed(() => this.dataService.getPostById(Number(this.id())));
 
 
   showWarning = signal<boolean>(false); //signal for required fields
