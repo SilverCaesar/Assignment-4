@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <h2 class="text-center mb-4">All Expenses</h2>
+    @if(expenseService.expenses().length === 0){
+        <div class="alert alert-info text-center">
+            No expenses available. Please add a new expense.
+        </div>
+    }
+    @else{
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                @for (expense of expenseService.expenses(); track expense.id){
+                    @if (expense) {
+                        <app-expense-item [expense]="expense"></app-expense-item>
+                    }
+                }
+            </div>
+        </div>
+        
+    }
+        
+    </div>
+
