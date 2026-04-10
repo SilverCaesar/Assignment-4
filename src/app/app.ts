@@ -18,4 +18,5 @@ export class App {
   protected readonly title = signal('Assignment-4');
   
   expenseService = inject(ExpenseService);
+  
 }
